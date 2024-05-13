@@ -1,11 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
+import {Routes} from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-       테스트
-    </div>
+    <Routes>
+
+    </Routes>
   );
 }
 
