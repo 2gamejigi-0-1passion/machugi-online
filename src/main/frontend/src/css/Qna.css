@@ -1,0 +1,653 @@
+.qna-container{
+    display: flex;
+    justify-content: center;
+}
+
+.vertical-menu{
+    /*border: 1px solid;*/
+    display: flex;
+    margin: 10px;
+    font-size: 15px;
+    width: 250px;
+    height: 800px;
+}
+
+.vertical-menu .accordion {
+    background-color: white; /* 배경색을 하얀색으로 설정 */
+    border-color: black; /* 테두리 색상을 검은색으로 설정 */
+    box-shadow: none; /* 기본 테두리 그림자 제거 */
+}
+
+.vertical-menu .accordion-button {
+    background-color: white; /* 버튼 배경색을 하얀색으로 설정 */
+    color: black; /* 버튼 텍스트 색상을 검은색으로 설정 */
+}
+
+.vertical-menu .accordion-button:not(.collapsed) {
+    background-color: white; /* 클릭 시 버튼 배경색을 하얀색으로 설정 */
+    color: black; /* 클릭 시 버튼 텍스트 색상을 검은색으로 설정 */
+}
+
+.vertical-menu .accordion-header {
+    border-color: black; /* 아코디언 헤더의 테두리 색상을 검은색으로 설정 */
+    background-color: white; /* 아코디언 헤더 배경색을 하얀색으로 설정 */
+}
+
+.vertical-menu .accordion-body {
+    border-top-color: black; /* 아코디언 바디의 상단 테두리 색상을 검은색으로 설정 */
+}
+
+.vertical-menu .accordion-button:focus {
+    border-color: black; /* 포커스 시 테두리 색상을 검은색으로 설정 */
+    outline: 0; /* 포커스 시 기본 아웃라인 제거 */
+    box-shadow: none; /* 포커스 시 기본 그림자 제거 */
+}
+
+
+
+.a-link {
+    text-decoration-line: none;
+    color: #5b5959; /* 기본 글자색 */
+    transition: color 0.3s ease;
+}
+
+.a-link:hover {
+    color: black; /* 마우스 오버시 글자색 */
+}
+
+.test-div1{
+    width: 100%;
+}
+
+.qna-container2{
+    /*border: 1px solid;*/
+    margin: 10px;
+    font-size: 15px;
+    width: 40%;
+    height: 100%;
+}
+
+.test-div4{
+    border: 1px solid black;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    text-align: center;
+    color: black;
+}
+
+.qna{
+    font-size: 15px;
+    width: 100%;
+    border-bottom: 1px solid #dee2e6;
+    border-collapse: collapse;
+}
+
+.qna-guide{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 30px;
+    text-align: center;
+    color: black;
+    font-size: 18px;
+}
+
+.qna-info{
+    padding: 15px;
+}
+
+.qna-info h4{
+    font-size: 20px;
+    color: black;
+    white-space: nowrap; /* 한 줄로만 표시 */
+    overflow: hidden; /* 넘치는 부분 숨김 처리 */
+    text-overflow: ellipsis; /* 넘치는 부분에 ... 표시 */
+}
+
+.qna-info p{
+    color: #495057;
+    white-space: nowrap; /* 한 줄로만 표시 */
+    overflow: hidden; /* 넘치는 부분 숨김 처리 */
+    text-overflow: ellipsis; /* 넘치는 부분에 ... 표시 */
+}
+
+.qna-info > div {
+    margin: 5px; /* 모든 .qna 클래스를 가진 div 안에 있는 요소들에게 10px의 margin을 적용 */
+}
+
+.qna-info-detail{
+    display: flex;
+    color: #495057;
+    font-size: 12px;
+}
+
+.qna-info-user-data{
+    margin-left: auto;
+    color: #495057;
+}
+
+.qna-tag{
+    color: black;
+}
+
+.qna-a{
+    text-decoration: none;
+}
+
+.qna-a:hover > .qna-info {
+    background-color: #fafafa; /* 마우스 호버 시 div의 배경색을 회색으로 설정 */
+}
+
+.qna-posts{
+    display: flex;
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 12px;
+}
+
+.sorts-btn{
+    font-size: 16px;
+    background-color: white; /* 버튼 배경색 */
+    color: #495057; /* 버튼 텍스트 색상 */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.sorts-btn:hover {
+    font-weight: bold; /* 활성화된 버튼의 글씨를 진하게 표시 */
+    color: #6b6b6b; /* 마우스 오버시 글자색 */
+}
+
+.sorts-btn.active {
+    font-weight: bold; /* 활성화된 버튼의 글씨를 진하게 표시 */
+    color: #282828; /* 활성화된 버튼의 글씨 색상 변경 */
+}
+
+.write-btn{
+    padding: 10px 20px;
+    font-size: 12px;
+    background-color: black; /* 버튼 배경색 */
+    color: #fff; /* 버튼 텍스트 색상 */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: auto;
+
+}
+
+.qna-detail-wrapper{
+    max-width: 1200px;
+    min-height: 1000px;
+}
+
+.qna-hash-tag{
+    border: none;
+    margin-bottom: 14px;
+    outline: none;
+    font-size: 16px;
+}
+
+.qna-detail-text-title{
+    padding: 0;
+    width: 100%;
+    height: 39px;
+    min-height: 1.75rem;
+    border: none;
+    font-size: 25px;
+    outline: none;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    resize: none; /* 늘이기/당기기 기능 비활성화 */
+}
+
+.qna-detail-content{
+    width: 800px;
+    max-height: 600px;
+    height: 600px;
+    margin-bottom: 50px;
+    /*font-weight: bold;*/
+}
+
+.cancel-btn{
+    padding: 10px 20px;
+    font-size: 12px;
+    background-color: white; /* 버튼 배경색 */
+    color: #000000; /* 버튼 텍스트 색상 */
+    border: 1px solid;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: auto; /* 버튼을 맨 오른쪽으로 이동 */
+    font-weight: bold;
+}
+
+.registration-btn{
+    padding: 10px 20px;
+    font-size: 12px;
+    background-color: #50c439; /* 버튼 배경색 */
+    color: #fff; /* 버튼 텍스트 색상 */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+.qna-detail-btn{
+    display: flex;
+    align-items: center; /* 수직 가운데 정렬 */
+    padding: 16px 0;
+    border: none;
+    /*justify-content: flex-end;*/
+}
+
+.hash-ul{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+.hash-li{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    margin: 0px 10px 0px 0px;
+    padding: 3px 13.333px;
+    background: rgb(248, 249, 250);
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 13px;
+    color: rgb(134, 142, 150);
+}
+
+.qnaList-hash-li{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    margin: 0px 10px 0px 0px;
+    padding: 3px 13.333px;
+    background: rgb(248, 249, 250);
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 13px;
+    color: rgb(44, 41, 41);
+}
+
+.hash-div1{
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+.hash-delete-btn{
+    margin: 0px;
+    padding: 0px;
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+}
+
+.hash-span{
+    margin-right: 5px;
+}
+
+.heart-icon::before{
+    content: "\f004";
+    font-family: "Font Awesome 5 Free";
+}
+
+.view-icon::before{
+    content: "\f06e";
+    font-family: "Font Awesome 5 Free";
+}
+
+.comment-icon::before{
+    content: "\f075";;
+    font-family: "Font Awesome 5 Free";
+}
+
+/* QnaList Css*/
+
+.community-header{
+    padding: 24px 0;
+    width: 100%;
+    background-color: #333b3d;
+}
+
+.community-header-content{
+    margin: 0 auto;
+    max-width: 1160px;
+}
+
+.community-header-content-title{
+    height: 20px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: .71;
+    color: #fff;
+}
+
+.community-header-content-sub-title{
+    margin-top: 12px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: normal;
+    color: #fff;
+}
+
+.qna-search-filter{
+    padding: 20px 0 24px;
+}
+
+.qna-search-item{
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.qna-search-item2{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    padding: 10px 12px;
+    min-width: 200px;
+    min-height: 40px;
+    letter-spacing: -.3px;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+.qna-search-item-input{
+    padding: 0;
+    width: 100%;
+    line-height: 1.43;
+    letter-spacing: -.3px;
+    font-size: 14px;
+    border: 0;
+    background: none;
+    outline: none;
+}
+
+.qna-search-btn{
+    min-width: 96px;
+    margin-left: 16px;
+    height: 40px;
+    font-weight: 700;
+    background-color: #00c471;
+    border: 1px solid #00c471;
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+}
+
+.qna-search-reset-btn{
+    min-width: 96px;
+    margin-left: 16px;
+    height: 40px;
+    font-weight: 700;
+    background-color: #00a0c4;
+    border: 1px solid #00a0c4;
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+}
+
+.qna-search-hash-box{
+    width: 100%;
+}
+
+.qna-search-hash-box2{
+    display: flex;
+    padding: 6px;
+    height: 40px;
+    letter-spacing: -.3px;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+.qna-search-hash-li{
+    padding: 4px 8px;
+    width: fit-content;
+    height: 26px;
+    border: none;
+    white-space: nowrap;
+    color: #3e4042;
+    background-color: #f1f3f5;
+    line-height: 1.38;
+    font-size: 13px;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    list-style-type: none;
+    margin-bottom: 5px;
+    margin-right: 8px;
+    border-radius: 4px;
+    font-weight: 700;
+}
+
+.qna-search-hash-input{
+    width: 130px;
+    height: 25px;
+    font-size: 14px;
+    outline: none;
+    border: 0;
+}
+
+/* QnaList Css*/
+
+/* QnaRead Css*/
+
+.qna-read-container{
+    display: grid;
+    grid-template-areas: "main sidebar";
+    grid-template-columns: minmax(0, 812px) 388px;
+    margin: 0 auto;
+    max-width: 1200px;
+    box-sizing: content-box;
+    color: #212529;
+}
+
+.qna-read-view{
+    grid-area: main;
+    height: 100%;
+    min-height: 980px;
+    border-left: 1px solid #e9efea;
+    border-right: 1px solid #e9efea;
+}
+
+.qna-read-header{
+    padding: 40px 40px 20px;
+    color: #24262a;
+}
+
+.qna-read-header-title{
+    margin-bottom: 16px;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 150%;
+    letter-spacing: -.3px;
+    word-break: break-all;
+}
+
+.qna-read-header-time {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    color: #393b3f;
+    font-size: .875rem;
+}
+
+.qna-read-horizon{
+    margin: 0 30px;
+    height: 1px;
+    background-color: #e9ecef;
+}
+
+.qna-read-body{
+    padding: 40px 40px;
+}
+
+.qna-read-body-contents{
+    min-height: 48px;
+}
+
+.qna-read-body-hashtag{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: -8px;
+    margin-top: 28px;
+    padding: 0;
+}
+
+.qna-read-body-hashtag-li{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    margin: 0px 10px 0px 0px;
+    padding: 3px 13.333px;
+    background: #f1f3f5;
+    border-radius: 4px;
+    font-weight: 1000;
+    font-size: 13px;
+    color: rgb(51, 49, 49);
+}
+
+.qna-read-comment-body{
+    padding: 40px;
+    border-top: 1px solid #e9ecef;
+}
+
+.qna-read-comment-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 27px;
+}
+
+.qna-read-comment{
+    font-size: 1.125rem;
+    font-weight: 800;
+}
+
+.qna-read-comment-count{
+    color: #59d759;
+}
+
+.qna-read-comment-create{
+    display: flex;
+    width: 100%;
+    padding: 12px 16px;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    cursor: pointer;
+}
+
+.qna-read-comment-create-p{
+    font-size: 1rem;
+    color: #adb5bd;
+    margin: 0;
+}
+
+.qna-read-comment-none-body{
+    margin: 32px 0;
+}
+
+.qna-read-comment-none{
+    display: flex;
+    align-items: center;
+    width: 210px;
+    height: 374px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.qna-read-comment-none-icon::before {
+    content: "\f4a3"; /* 아이콘 유니코드 */
+    font-weight: 100; /* 폰트 두께 */
+    font-size: 1.5em; /* 아이콘 크기 */
+    line-height: 1; /* 라인 높이 */
+    vertical-align: middle; /* 수직 정렬 */
+}
+
+.qna-read-comment-none-span{
+    color: #8d9093;
+    margin-top: 10px;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.qna-read-sidebar{
+    position: sticky;
+    top: 64px;
+    padding: 40px
+}
+
+.qna-read-profile-info-card{
+    background-color: #fff;
+    border: 1px solid #e9ecef;
+    box-shadow: 0 1px 3px rgba(0,0,0,.05), 0 10px 15px -5px rgba(0,0,0,.05), 0 7px 7px -5px rgba(0,0,0,.04);
+    margin-bottom: 16px;
+    padding: 24px;
+    width: 100%;
+    border-radius: 12px;
+}
+
+.qna-read-info-card{
+    padding: 24px;
+    width: 100%;
+    border-radius: 12px;
+    background-color: #f8f9fa;
+}
+
+.qna-read-user-info-profile-card2{
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    text-decoration: none;
+}
+
+.qna-read-user-info{
+    width: 182px;
+}
+
+.qna-read-user{
+    overflow: hidden;
+    margin-bottom: 0;
+    font-weight: 700;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: black;
+    font-size: 1.125rem !important;
+}
+
+.qna-read-user-p{
+    margin-top: 2px;
+    color: #868e96;
+}
+/* QnaRead Css*/
