@@ -1,4 +1,6 @@
 import { ACCESS_TOKEN } from '../constants';
+import {useLocation, useNavigate} from "react-router-dom";
+import {useEffect} from "react";
 
 export function useLogout() {
     const handleLogout = (setAuthenticated, setCurrentUser) => {
