@@ -1,4 +1,6 @@
-import "../css/MainContents.css";
+import { useAuth } from "../hooks/useAuth";
+import React, { useState } from "react";
+import AlertModal from "./AlertModal";
 
 function GameCreateButton(){
 

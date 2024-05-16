@@ -21,11 +21,11 @@ function Header(props){
                             // true
                             <>
                                 <Button variant="outline-dark" onClick={() => setModalShowSignIn(true)} style={{ marginRight: '10px' }}>
-                                    마이페이지
+                                    <span>마이페이지</span>
                                 </Button>
                                 <SignInModal show={modalShowSignIn} onHide={() => setModalShowSignIn(false)} />
                                 <Button variant="success" onClick={() => props.onLogout()}>
-                                    로그아웃
+                                    <span>로그아웃</span>
                                 </Button>
                                 <SignUpModal show={modalShowSingUp} onHide={() => setModalShowSingUp(false)} />
                             </>

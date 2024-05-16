@@ -38,9 +38,10 @@
 }
 
 .from-signup-btn{
-    width: 45px;
-    height: 45px;
-    margin: 15px;
+    /*padding: 10px;*/
+    /*font-size: 15px;*/
+    width: 65%;
+    margin: 10px;
     border: white;
     filter: drop-shadow(2px 2px 2px #c0bfbf)
 }

@@ -1,60 +1,12 @@
 import React, {useState} from 'react';
 import Modal from 'react-bootstrap/Modal';
-import '../css/SignIn.css';
-import googleBtn from '../assets/web_neutral_sq_na@1x.png';
-import kakaoBtn from '../assets/kakaotalk_sharing_btn_small.png'
-import naverBtn from '../assets/btnG_icon_square.png'
+import '../styles/SignIn.css';
+import googleBtn from '../assets/google_login_btn.png';
+import kakaoBtn from '../assets/kakao_login_btn.png'
+import naverBtn from '../assets/naver_login_btn.png'
 import testLogo from '../assets/size_s_icon_137187.png'
-import {useNavigate} from "react-router-dom";
-import { signIn } from "../services/APIUtils";
 import {GOOGLE_AUTH_URL, KAKAO_AUTH_URL, NAVER_AUTH_URL} from "../constants";
 function SignInModal(props) {
-
-    const navigate = useNavigate();
-
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-
-    const handleInputChange = (e) => {
-        const { name, value } = e.target; // e.target에서 name과 value 속성을 추출
-
-        // 각각의 입력 필드에 대해 상태 업데이트
-        if (name === 'email') {
-            setEmail(value);
-        } else if (name === 'password') {
-            setPassword(value);
-        }
-    };
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-
-        const formData = {
-            email: email,
-            password: password,
-
-        };
-
-        signIn(formData)
-            .then(result => {
-                const response = signIn(formData);
-
-                // 서버에서 받은 토큰
-                //const token = response.data.token;
-                const token = result.accessToken;
-
-                // 토큰을 로컬스토리지에 저장
-                localStorage.setItem('accessToken', token);
-                navigate('/'); // 로그인 성공시 메인화면으로 이동
-                props.onHide();
-                props.onLogin();
-            })
-            .catch((error) => {
-                alert('로그인 실패');
-                console.log(error);
-            });
-
-    };
 
     return (
         <Modal
@@ -64,49 +16,21 @@ function SignInModal(props) {
         >
             <Modal.Body>
                 <div className={"form-background"}>
-                    <form onSubmit={handleSubmit}>
-                        <img className={"form-logo"} src={testLogo} alt='로고'/>
-                        <div>
-                            <input
-                                className={"form-input"}
-                                value={email}
-                                onChange={handleInputChange}
-                                type={"text"}
-                                name={"email"}
-                                placeholder={"이메일"}
-                            />
-                        </div>
-                        <div>
-                            <input
-                                className={"form-input"}
-                                value={password}
-                                onChange={handleInputChange}
-                                type={"password"}
-                                name={"password"}
-                                placeholder={"비밀번호"}
-                            />
-                        </div>
-                        <div>
-                            <button type={"submit"} className={"form-button"}>
-                                로그인
-                            </button>
-                        </div>
-                        <div className={"form-find-div"}>
-                            <a href="/" className={"form-find"}>아이디 찾기</a>
-                            <a href="/" className={"form-find"}>비밀번호 찾기</a>
-                            <a href="#" className={"form-find"}>회원가입</a>
-                        </div>
-                    </form>
+                    <img className={"form-logo"} src={testLogo} alt="로고 이미지"/>
                     <div className={"hr-sect"}>
-                        간편로그인
+                        <span>간편로그인</span>
                     </div>
                     <div>
                         <a href={NAVER_AUTH_URL}>
                             <img className={"from-signup-btn"} src={naverBtn} alt="네이버 로그인"/>
                         </a>
+                    </div>
+                    <div>
                         <a href={KAKAO_AUTH_URL}>
                             <img className={"from-signup-btn"} src={kakaoBtn} alt="카카오 로그인"/>
                         </a>
+                    </div>
+                    <div>
                         <a href={GOOGLE_AUTH_URL}>
                             <img className={"from-signup-btn"} src={googleBtn} alt="구글 로그인"/>
                         </a>
