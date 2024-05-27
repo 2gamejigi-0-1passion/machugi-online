@@ -20,11 +20,6 @@ export function useAuth() {
                 // Error Handling
             });
     }
-    function handleLogout() {
-        localStorage.removeItem(ACCESS_TOKEN);
-        setAuthenticated(false);
-        setCurrentUser(null);
-    }
 
-    return { authenticated, currentUser, loadCurrentlyLoggedInUser, handleLogout };
+    return { authenticated, setAuthenticated, currentUser, setCurrentUser, loadCurrentlyLoggedInUser  };
 }

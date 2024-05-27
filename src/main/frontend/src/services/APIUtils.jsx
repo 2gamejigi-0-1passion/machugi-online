@@ -102,9 +102,9 @@ export function deleteQna(id){
     })
 }
 
-export function currentUser(){
-    return request({
-        url: API_BASE_URL + "/user/me",
-        method: 'GET'
-    })
-}
+// export function currentUser(){
+//     return request({
+//         url: API_BASE_URL + "/user/me",
+//         method: 'GET'
+//     })
+// }
