@@ -1,14 +1,15 @@
 import React from "react";
 import {useAuth} from "../hooks/useAuth";
+import "../styles/MainContents.css";
 
 function MainNotice(){
 
     const { currentUser } = useAuth();
 
     return(
-        <div>
+        <div className={"main-notice-text"}>
             <span>이 사이트는 게임 제작 사이트입니다.</span>
-            {currentUser && <p>어서오세여, {currentUser.name}!</p>}
+            {currentUser && <p>환영합니다, {currentUser.name}님!</p>}
         </div>
     );
 }

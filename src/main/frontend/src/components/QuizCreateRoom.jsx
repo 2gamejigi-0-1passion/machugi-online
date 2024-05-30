@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import "../styles/QuizCreateRoom.css";
 import googleBtn from '../assets/web_neutral_sq_na@1x.png';
-import QuizCreateModal from "./QuizCreateModal";
+import TypeSelectModal from "./TypeSelectModal";
 
 function QuizCreateRoom() {
 
@@ -32,7 +32,7 @@ function QuizCreateRoom() {
                                 <line x1="50" y1="10" x2="50" y2="90" stroke="black" strokeWidth="20" />
                             </svg>
                         </button>
-                        <QuizCreateModal
+                        <TypeSelectModal
                             show={modalShowQuizCreate}
                             onHide={() => setModalQuizCreate(false)}
                         />
