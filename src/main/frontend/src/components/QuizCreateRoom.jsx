@@ -1,57 +1,80 @@
-import React, {useState} from "react";
+import React, { useRef, useState } from "react";
 import "../styles/QuizCreateRoom.css";
-import googleBtn from '../assets/web_neutral_sq_na@1x.png';
-import TypeSelectModal from "./TypeSelectModal";
+import QuizCreateModal from "./QuizCreateModal";
 
 function QuizCreateRoom() {
+    const fileInputRef = useRef(null);
+    const [selectedImages, setSelectedImages] = useState([]);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [selectedImageIndex, setSelectedImageIndex] = useState(null);
 
-    const [modalShowQuizCreate, setModalQuizCreate] = useState(false);
+    const handleFileInputChange = (event) => {
+        const files = event.target.files;
+        const newImages = Array.from(files).map((file) => {
+            return new Promise((resolve) => {
+                const reader = new FileReader();
+                reader.onloadend = () => {
+                    resolve(reader.result);
+                };
+                reader.readAsDataURL(file);
+            });
+        });
+
+        Promise.all(newImages).then((images) => {
+            setSelectedImages((prevImages) => [...prevImages, ...images]);
+        });
+    };
+
+    const handleImageButtonClick = (index) => {
+        setSelectedImageIndex(index);
+        setIsModalOpen(true);
+    };
+
+    const handleFileInputButtonClick = () => {
+        if (fileInputRef.current) {
+            fileInputRef.current.click();
+        }
+    };
 
     return (
         <div className="quiz-create-room-container">
-            <div className="quiz-search-container">
-                {/* 검색창 */}
-                <input
-                    className="quiz-search-input"
-                    placeholder="검색창 입니다."
+            <div className="content-wrapper">
+                {/* Selected images */}
+                {selectedImages.map((image, index) => (
+                    <button key={index} className="quiz-created-icon" onClick={() => handleImageButtonClick(index)}>
+                        <a>
+                            <img src={image} alt={`Selected ${index}`} />
+                        </a>
+                    </button>
+                ))}
+                {/* Quiz create modal */}
+                <QuizCreateModal
+                    show={isModalOpen}
+                    onHide={() => setIsModalOpen(false)}
+                    images={selectedImages}
+                    selectedImageIndex={selectedImageIndex}
                 />
-            </div>
-            <div>
+                {/* Quiz create button */}
                 <div>
-                    {/* 퀴즈 생성 컨테이너 */}
-                    <div>
-                        <button className={"quiz-create-btn-icon"} onClick={() => setModalQuizCreate(true)}>
-                            <svg
-                                width="36"
-                                height="36"
-                                viewBox="0 0 100 100"
-                                xmlns="http://www.w3.org/2000/svg"
-                                style={{ cursor: 'pointer' }} // 마우스가 올라가면 커서를 포인터로 변경합니다.
-                            >
-                                <line x1="10" y1="50" x2="90" y2="50" stroke="black" strokeWidth="20" />
-                                <line x1="50" y1="10" x2="50" y2="90" stroke="black" strokeWidth="20" />
-                            </svg>
-                        </button>
-                        <TypeSelectModal
-                            show={modalShowQuizCreate}
-                            onHide={() => setModalQuizCreate(false)}
-                        />
-                    </div>
-                    <div>
-                        <div className={"quiz-created-icon"}>
-                            <a>
-                                <img src={googleBtn} alt={"임시 이미지"}/>
-                            </a>
-                        </div>
-                        <div>
-                            <span>퀴즈이름</span>
-                        </div>
-                    </div>
-                    
-                </div>
-                <div>
-                    <span>제작한 퀴즈가 없습니다. 퀴즈를 만들어 볼까요?</span>
-                    {/* 퀴즈 없을 시 알림 화면 */}
+                    <button className="quiz-create-btn-icon" onClick={handleFileInputButtonClick}>
+                        <svg
+                            width="36"
+                            height="36"
+                            viewBox="0 0 100 100"
+                            xmlns="http://www.w3.org/2000/svg"
+                            style={{ cursor: 'pointer' }}
+                        >
+                            <line x1="10" y1="50" x2="90" y2="50" stroke="black" strokeWidth="20" />
+                            <line x1="50" y1="10" x2="50" y2="90" stroke="black" strokeWidth="20" />
+                        </svg>
+                    </button>
+                    <input
+                        type="file"
+                        ref={fileInputRef}
+                        style={{ display: 'none' }}
+                        onChange={handleFileInputChange}
+                        multiple
+                    />
                 </div>
             </div>
         </div>

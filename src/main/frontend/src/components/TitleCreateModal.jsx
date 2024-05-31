@@ -52,7 +52,7 @@ function TitleCreateModal(props){
             <Modal.Body>
                 <div className={"modal-container"}>
                     <div>
-                        <span>퀴즈만들기</span>
+                        <span>퀴즈 타이틀 만들기</span>
                     </div>
                     <hr/>
                     <div>

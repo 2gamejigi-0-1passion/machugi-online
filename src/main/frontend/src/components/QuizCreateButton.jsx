@@ -19,7 +19,7 @@ function QuizCreateButton(){
         } else {
             console.log("로그인됨")
             console.log(authenticated);
-            navigate("quizCreate");
+            navigate("quizTitleCreate");
         }
     };
 
